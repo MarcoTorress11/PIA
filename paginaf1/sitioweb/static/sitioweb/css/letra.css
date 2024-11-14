@@ -1,0 +1,67 @@
+@font-face {
+    font-family: Formula1-Bold;
+    src: url('../fonts/Formula1-Bold.otf');
+}
+@font-face {
+    font-family: Formula1-Regular;
+    src: url('../fonts/Formula1-Regular.otf');
+}
+@font-face {
+    font-family: Formula1-Wide;
+    src: url('../fonts/Formula1-Wide.otf');
+}
+
+.titulo_principal {
+    color: red;
+    text-align: center;
+    font-family: Formula1-Bold;
+    font-size: 50px;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+
+.titulo {
+    background-color: red; color: white;
+    text-align: center;
+    font-family: Formula1-Bold;
+    font-size: 45px;
+}
+
+.subtitulo {
+    background-color: gainsboro;
+    text-align: center;
+    font-family: Formula1-Regular;
+    font-size: 30px;
+    line-height: 2;
+}
+
+.parrafo {
+    text-align: justify;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: auto;
+}
+
+.abajo {
+    font-family: 'Arial Narrow Bold';
+}
+
+.pilotos{
+    font-family: Formula1-Regular;
+    line-height: 1.5;
+    max-width: 910px;
+    margin: auto;
+    font-size: 20px;
+}
+
+.indice {
+    color: black;
+    text-align: justify;
+    font-family: Formula1-Regular;
+    font-size: 20px;
+    line-height: 1.5;
+    max-width: 350px;
+    margin: auto;
+
+}

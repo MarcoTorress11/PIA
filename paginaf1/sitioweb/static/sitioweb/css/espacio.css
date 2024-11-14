@@ -1,0 +1,10 @@
+table, th, td {
+    background-color: whitesmoke;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding-top: 15px;
+    padding-bottom: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }

@@ -1,0 +1,188 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 2</title>
+    <link rel="stylesheet" href="{% static 'sitioweb/css/letra.css' %}">
+</head>
+<body>
+<header style="display: flex; align-items: center; justify-content: space-between; padding: 10px; background-color: rgba(255, 0, 0, 0.683);">
+    <h1 class="titulo_principal" style="color: whitesmoke; margin: 0;" id="inicio">Fórmula 1</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/F1.svg/640px-F1.svg.png" alt="logotipo formula1" style="height: 80px; width: auto;">
+</header>
+
+<nav style="background-color: red;">
+    <ul style="list-style: none; padding: 0; display: flex; justify-content: space-around; color: white; align-items: center;">
+        <li><a class="parrafo" href="{% url 'index' %}" style="color: white; text-decoration: none;">Historia de la Fórmula 1</a></li>
+        <li><a class="parrafo" href="{% url 'funcionamiento' %}" style="color: white; text-decoration: none;">Como funciona la Fórmula 1 actual</a></li>
+        <li><a class="parrafo" href="{% url 'pilotos' %}" style="color: white; text-decoration: none;">Pilotos</a></li>
+        <li style="position: relative;">
+            <a class="parrafo" href="#eq" style="color: white; text-decoration: none;">Equipos</a>
+            <ul class="parrafo" style="position: absolute; top: 100%; left: 0; background-color: white; list-style: none; padding: 0; display: none;">
+                <li><a href="#eq1" style="color: red; text-decoration: none;">Equipos actuales</a></li>
+            </ul>
+        </li>
+        <li><a class="parrafo" href="{% url 'circuitos' %}" style="color: white; text-decoration: none;">Circuitos</a></li>
+    </ul>
+</nav>
+
+<hr style="height: 5px; background-color: red; border: none;">
+
+<script>
+    document.querySelector('li a[href="#eq"]').addEventListener('click', function(event) {
+        event.preventDefault(); 
+        const submenu = document.querySelector('li a[href="#eq"] + ul');
+        if (submenu.style.display === 'block') {
+            submenu.style.display = 'none';
+        } else {
+            submenu.style.display = 'block';
+        }
+    });
+</script>
+    
+    <main>
+        <h2 id="eq" class="titulo">Equipos</h2>
+        <h4 class="subtitulo" id="eq1">Equipos actuales</h4>
+        <section>
+            <div class="parrafo">
+                <article>
+                    <br>
+                        <strong><span style="font-size: 20px;">Red Bull</span></strong>
+                    <p>Es una escudería austriaca de Fórmula 1 con base en Milton Keynes (Inglaterra, Reino Unido), propiedad de la empresa fabricante de bebidas energéticas Red Bull GmbH. <br> Cuenta en su palmarés con siete Mundiales de Pilotos: Sebastian Vettel (4), Max Verstappen (3); y seis Mundiales de Constructores. </p>
+                    <img src="https://media.licdn.com/dms/image/D4E12AQHHKuO2WNtWjw/article-cover_image-shrink_720_1280/0/1701050983933?e=2147483647&v=beta&t=XusrofmKvDGCfr5dUxmVFYhrojzmI9t_yQ8L0WrTxOs" alt="Fotografía de equipo Red Bull Racing" width="700">
+                    <p><mark>Sus pilotos son Max Verstappen y Sergio "Checo" Pérez <br> Su team principal es Christian Horner</mark></p>
+                </article>
+            </div>
+        </section>
+        <br>
+
+        <section>
+            <div class="parrafo">
+                <article>
+                    <br>
+                        <strong><span style="font-size: 20px;">Ferrari</span></strong>
+                    <p>Scuderia Ferrari es la división deportiva (Gestione Sportiva) de automóviles Ferrari encargada de las competiciones de automovilismo en Fórmula 1. Es la escudería más longeva y el equipo en activo más antiguo de Fórmula 1, el más exitoso y el que ha conseguido más victorias (243), más veces el Campeonato Mundial de Pilotos (15) y el Campeonato Mundial de Constructores (16). </p>
+                    <center><img src="https://f1i.com/wp-content/uploads/2023/12/XPB_1255814_HiRes-scaled.jpg" alt="Fotografía de Scuderia Ferrari" width="700"></center>
+                    <p><mark>Sus pilotos son Charles Leclerc y Carlos Sainz <br> Su team principal es Fred Vasseur</mark></p>
+                </article>
+            </div>
+        </section>
+        <br>
+
+        <section>
+            <div class="parrafo">
+                <article>
+                    <br>
+                        <strong><span style="font-size: 20px;">Mercedes</span></strong>
+                    <p>Mercedes-Benz es una de las automotrices más exitosas de la Fórmula 1, considerada uno de los cuatro equipos con mejores resultados. Participó inicialmente como constructor en Fórmula 1 en 1954 y 1955, y volvió a hacerlo desde 2010 hasta la actualidad. El equipo alemán ganó ocho Campeonatos de Constructores de forma consecutiva (de 2014 a 2021). Es la tercera escudería que posee más Campeonatos de Pilotos, con 9 (1954, 1955, 2014, 2015, 2016, 2017, 2018, 2019 y 2020); ganados por Lewis Hamilton (6), Juan Manuel Fangio (2) y Nico Rosberg (1). También es el tercer equipo en la historia con más victorias (125) y poles (137). </p>
+                    <center><img src="https://webp.gp.cdn.pxr.nl/news/2024/02/11/2c7d8fae21985c2cb978be2ae8698e9df7508964.jpg?width=1800" alt="Fotografía de equipo Mercedes" width="700"></center>
+                    <p><mark>Sus pilotos son Lewis Hamilton y George Russell <br> Su team principal es Toto Wolff</mark></p>
+                </article>
+            </div>
+        </section>
+        <br>
+
+        <section>
+            <div class="parrafo">
+                <article>
+                    <br>
+                        <strong><span style="font-size: 20px;">Aston Martin</span></strong>
+                    <p> La escudería de automovilismo tiene sede en Silverstone. La compañía participó por primera vez durante la temporada 1959 con el monoplaza DBR4, usando su propio motor, pero sin obtener puntos. Continuaron con malos resultados en la temporada 1960 nuevamente sin obtener puntos. Como resultado, Aston Martin decidió abandonar la Fórmula 1. Un cambio de marca del Racing Point F1 Team resultó en el regreso a la Fórmula 1 como Aston Martin en 2021, utilizando motores de Mercedes.</p>
+                    <center><img src="https://d3bzyjrsc4233l.cloudfront.net/news/F1_yJ0GKpU.png" alt="Presentación del monoplaza de la escudería Aston Martin" width="700"></center>
+                    <p><mark>Sus pilotos son Fernando Alonso y Lance Stroll <br> Su team principal es Mike Krack</mark></p>
+                </article>
+            </div>
+        </section>
+        <br>
+
+        <section>
+            <div class="parrafo">
+                <article>
+                    <br>
+                        <strong><span style="font-size: 20px;">McLaren</span></strong>
+                    <p> McLaren Racing Limited, conocida comúnmente como McLaren,1​ es una escudería británica de automovilismo con sede en Woking, Inglaterra. Fue fundada en 1963 por el piloto neozelandés Bruce McLaren. Es considerado uno de los cuatro grandes equipos de Fórmula 1. <br> A lo largo de los años ha obtenido doce veces el Campeonato Mundial de Pilotos, ocho veces el Campeonato Mundial de Constructores, 183 victorias, 155 poles y 489 podios.</p>
+                    <center><img src="https://f1i.com/wp-content/uploads/2023/12/XPB_1257350_1200px.jpg" alt="Fotografía de escudería McLaren" width="700"></center>
+                    <p><mark>Sus pilotos son Lando Norris y Oscar Piastri <br> Su team principal es Andrea Stella</mark></p>
+                </article>
+            </div>
+        </section>
+        <br>
+
+        <section>
+            <div class="parrafo">
+                <article>
+                    <br>
+                        <strong><span style="font-size: 20px;">Racing Bulls (RB)</span></strong>
+                    <p> Racing Bulls S.p.A., conocida deportivamente como RB Formula One Team, es una escudería italiana de Fórmula 1 que hizo su debut en la temporada 2024. Es propiedad de la empresa Red Bull GmbH. Entre 2020 y 2023 fue conocida como AlphaTauri, y a mediados de 2023 se anunció el cambio de nombre en medio de una reestructuración. Su base de operaciones es la misma, desde que el fabricante de bebidas energéticas Red Bull adquiriese la antigua escudería Minardi, localizada en la ciudad de Faenza, Italia.</p>
+                    <center><img src="https://cdn.motorsport.com/images/mgl/YW7obwyY/s1000/daniel-ricciardo-racing-bulls-.jpg" alt="Fotografía de la presentación del equipo RB" width="700"></center>
+                    <p><mark>Sus pilotos son Yuki Tsunoda y Daniel Ricciardo <br> Su team principal es Laurent Mekies</mark></p>
+                </article>
+            </div>
+        </section>
+        <br>
+
+        <section>
+            <div class="parrafo">
+                <article>
+                    <br>
+                        <strong><span style="font-size: 20px;">Williams</span></strong>
+                    <p> Williams Grand Prix Engineering Limited comúnmente conocido como Williams Racing, es un equipo de Fórmula 1 creado en 1977 por Frank Williams y Patrick Head. Williams es considerado uno de los cuatro grandes equipos de Fórmula 1. <br> Siete pilotos han sido campeones mundiales con Williams: Alan Jones, Keke Rosberg, Nelson Piquet, Nigel Mansell, Alain Prost, Damon Hill y Jacques Villeneuve. A su vez, el equipo ganó 9 Campeonatos de Constructores entre 1980 y 1997. Este fue un récord hasta que Ferrari lo superó en el año 2000. </p>
+                    <center><img src="https://pbs.twimg.com/media/F_zN0ieXoAAIsEo?format=jpg&name=4096x4096" alt="Fotografía de escudería Williams" width="700"></center>
+                    <p><mark>Sus pilotos son Logan Sargeant y Alexander Albon <br> Su team principal es James Vowles</mark></p>
+                </article>
+            </div>
+        </section>
+        <br>
+
+        <section>
+            <div class="parrafo">
+                <article>
+                    <br>
+                        <strong><span style="font-size: 20px;">Alpine</span></strong>
+                    <p> BWT Alpine F1 Team, es una escudería francesa de Fórmula 1 con sede en Reino Unido y propiedad del Grupo Renault, que hizo su debut en la temporada 2021, cuando remplazo a la escuderia Renault.</p>
+                    <center><img src="https://scontent.fmty2-1.fna.fbcdn.net/v/t39.30808-6/408276212_723869009766168_2286910972944592278_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=qaSxn0r_QLUQ7kNvgHcgiaV&_nc_ht=scontent.fmty2-1.fna&oh=00_AYC3oB3M2vAaxLMvP5zGFFzk2x-gYxgtvK4LdLL8M5KH2w&oe=66D04C66" alt="Fotografía de escudería Alpine" width="700"></center>
+                    <p><mark>Sus pilotos son Pierre Gasly y Esteban Ocon <br> Su team principal es Bruno Famin</mark></p>
+                </article>
+            </div>
+        </section>
+        <br>
+
+        <section>
+            <div class="parrafo">
+                <article>
+                    <br>
+                        <strong><span style="font-size: 20px;">Haas F1 Team</span></strong>
+                    <p> Haas F1 Team, actualmente conocido como MoneyGram Haas F1 Team por razones de patrocinio, es un equipo estadounidense de carreras de Fórmula 1 construido por el empresario y copropietario del equipo Stewart-Haas Racing de la NASCAR Sprint Cup Series, Gene Haas, tras tener la propuesta de Guenther Steiner, su entrada fue aprobada por la comisión de la FIA y por Bernie Ecclestone en el mes de abril de 2014. El equipo debutó en la temporada 2016.</p>
+                    <center><img src="https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2023/08/magnussen-hulkenberg-3116564.jpg?tf=3840x" alt="Fotografia pilotos escuderia Haas" width="700"></center>
+                    <p><mark>Sus pilotos son Kevin Magnussen y Nico Hulkenberg <br> Su team principal es Ayo Komatsu</mark></p>
+                </article>
+            </div>
+        </section>
+        <br>
+
+        <section>
+            <div class="parrafo">
+                <article>
+                    <br>
+                        <strong><span style="font-size: 20px;">Stake F1 Team</span></strong>
+                    <p> Sauber Motorsport, conocida simplemente como Sauber, es una empresa constructora de automovilismo con base en Hinwil, Suiza. Ha competido en la Fórmula 1 con una escudería propia durante tres etapas distintas (1993-2005, 2010-2018 y 2024-presente), y actualmente participa bajo la denominación de Stake F1 Team Kick Sauber.</p>
+                    <center><img src="https://preview.redd.it/2024-stake-f1-team-kick-sauber-team-photo-bahrain-5358-x-v0-z8dsr9ifqflc1.jpeg?width=1080&crop=smart&auto=webp&s=304f3a258b8c33d07676524c3cc9ff3157e706f3" alt="Fotografia escuderia Stake Sauber" width="700"></center>
+                    <p><mark>Sus pilotos son Valtteri Bottas y Guanyu Zhou <br> Su team principal es Alessandi Alunni</mark></p>
+                </article>
+            </div>
+        </section>
+    </main>
+    <br>
+    <hr>
+    <footer class="abajo">
+        <a href="#inicio">👉Click aquí para regresar al inicio de la página</a>
+        <address>
+            <p>Desarrollado por MSTS</p>
+            <p>Derechos reservados &copy;</p>
+        </address>
+    </footer>
+</body>
+</html>

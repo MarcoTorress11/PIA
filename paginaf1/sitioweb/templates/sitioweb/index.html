@@ -1,0 +1,100 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 2</title>
+    <link rel="stylesheet" href="{% static 'sitioweb/css/letra.css' %}">
+</head>
+<body>
+<header style="display: flex; align-items: center; justify-content: space-between; padding: 10px; background-color: rgba(255, 0, 0, 0.683);">
+    <h1 class="titulo_principal" style="color: whitesmoke; margin: 0;" id="inicio">Fórmula 1</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/F1.svg/640px-F1.svg.png" alt="logotipo formula1" style="height: 80px; width: auto;">
+</header>
+
+<nav style="background-color: red;">
+    <ul style="list-style: none; padding: 0; display: flex; justify-content: space-around; color: white; align-items: center;">
+        <li style="position: relative;">
+            <a class="parrafo" href="#historia" style="color: white; text-decoration: none;">Historia de la Fórmula 1</a>
+            <ul class="parrafo" style="position: absolute; top: 100%; left: 0; background-color: white; list-style: none; padding: 0; display: none;">
+                <li><a href="#historia1" style="color: red; text-decoration: none;">Orígenes y Primeras Décadas</a></li>
+                <li><a href="#historia2" style="color: red; text-decoration: none;">Innovación y Evolución</a></li>
+                <li><a href="#historia3" style="color: red; text-decoration: none;">Época actual</a></li>
+            </ul>
+        </li>
+        <li><a class="parrafo" href="{% url 'funcionamiento' %}" style="color: white; text-decoration: none;">Como funciona la Fórmula 1 actual</a></li>
+        <li><a class="parrafo" href="{% url 'pilotos' %}" style="color: white; text-decoration: none;">Pilotos</a></li>
+        <li><a class="parrafo" href="{% url 'escuderias' %}" style="color: white; text-decoration: none;">Equipos</a></li>
+        <li><a class="parrafo" href="{% url 'circuitos' %}" style="color: white; text-decoration: none;">Circuitos</a></li>
+    </ul>
+</nav>
+
+<hr style="height: 5px; background-color: red; border: none;">
+
+<script>
+    document.querySelector('li a[href="#historia"]').addEventListener('click', function(event) {
+        event.preventDefault(); 
+        const submenu = document.querySelector('li a[href="#historia"] + ul');
+        if (submenu.style.display === 'block') {
+            submenu.style.display = 'none';
+        } else {
+            submenu.style.display = 'block';
+        }
+    });
+</script>
+
+    <main>
+        <h2 class="titulo" id="historia">Historia de la Fórmula 1</h2>
+        <section>
+            <article>
+                <h4 class="subtitulo" id="historia1">Orígenes y Primeras Décadas</h4>
+                <div>
+                    <p class="parrafo">La Fórmula 1 se estableció oficialmente en 1950 bajo la regulación de la Federación Internacional del Automóvil <abbr title="Federación Internacional del Automóvil">(FIA)</abbr>. La primera carrera de la historia de la <abbr title="Formula1">F1</abbr> se llevó a cabo en Silverstone, Reino Unido, el 13 de mayo de 1950.</p>
+                <p class="parrafo">Ferrari, la única escudería que ha participado en todas las temporadas, ganó su primer campeonato de constructores en 1952 con Alberto Ascari como piloto.</p><br>
+                </div>
+            </article>
+
+            <center>
+                <img src="https://www.f1aldia.com/photos/7700/7718/001_small.jpg" alt="carrera de la decada de los 50s" width="600">
+                <figcaption>Fotografía de carrera de los años 80</figcaption>
+            </center>
+        </section>
+        <br>
+        <section>
+            <article>
+                <h4 class="subtitulo" id="historia2">Innovación y Evolución</h4>
+                <p class="parrafo">Durante los años 70, la tecnología comenzó a jugar un papel más importante, con avances como la aerodinámica y el uso de materiales ligeros como la fibra de carbono.</p>
+                <center>
+                    <br><img src="https://www.aerodinamicaf1.com/wp-content/uploads/2019/09/80s.jpg?w=600" alt="Ayrton Senna pilotando para escudería McLaren" width="600">
+                    <figcaption>Ayrton Senna pilotando el McLaren MP4/5B</figcaption><br>
+                </center>
+                <p class="parrafo">En los 80, los motores turbo marcaron una era, proporcionando más potencia pero también mayor complejidad y riesgos.</p>
+            </article>
+        </section>
+        <br>
+        <section>
+            <article>
+                <h4 class="subtitulo" id="historia3">Época Actual</h4>
+                <p class="parrafo">En 2014, la F1 adoptó los motores híbridos, lo que llevó a una nueva era de competición donde Mercedes ha dominado con pilotos como Lewis Hamilton.</p>
+                <center>
+                    <br><img src="https://rtrsports.com/wp-content/uploads/2023/05/formula-1-points-1200x900.jpg" alt="Lewis Hamilton y Max Verstappen en carrera" width="600">
+                    <figcaption>Lewis Hamilton (carro gris) y Max Verstappen (carro azul) en carrera</figcaption><br>
+                </center>
+                <p class="parrafo">La Fórmula 1 sigue evolucionando con nuevas normativas que buscan equilibrar la competencia, reducir costos y aumentar la sostenibilidad, como el límite presupuestario y la promoción de combustibles sostenibles.</p>
+            </article>
+        </section>
+    </main>
+    <br>
+    <hr>
+    <footer class="abajo">
+        <a href="#inicio">👉Click aquí para regresar al inicio</a>
+        <address>
+            <p>Desarrollado por MSTS</p>
+            <p>Derechos reservados &copy;</p>
+        </address>
+    </footer>
+    
+</body>
+</html>

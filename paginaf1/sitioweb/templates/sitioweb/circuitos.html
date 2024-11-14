@@ -1,0 +1,425 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 2</title>
+    <link rel="stylesheet" href="{% static 'sitioweb/css/espacio.css' %}">
+    <link rel="stylesheet" href="{% static 'sitioweb/css/letra.css' %}">
+    <style>
+        table {
+                border: none;
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            td { 
+                padding: 5px 10px;
+                text-align: center;
+            }
+    </style>
+</head>
+<body>
+<header style="display: flex; align-items: center; justify-content: space-between; padding: 10px; background-color: rgba(255, 0, 0, 0.683);">
+    <h1 class="titulo_principal" style="color: whitesmoke; margin: 0;" id="inicio">Fórmula 1</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/F1.svg/640px-F1.svg.png" alt="logotipo formula1" style="height: 80px; width: auto;">
+</header>
+
+<nav style="background-color: red;">
+    <ul style="list-style: none; padding: 0; display: flex; justify-content: space-around; color: white; align-items: center;">
+        <li><a class="parrafo" href="{% url 'index' %}" style="color: white; text-decoration: none;">Historia de la Fórmula 1</a></li>
+        <li><a class="parrafo" href="{% url 'funcionamiento' %}" style="color: white; text-decoration: none;">Como funciona la Fórmula 1 actual</a></li>
+        <li><a class="parrafo" href="{% url 'pilotos' %}" style="color: white; text-decoration: none;">Pilotos</a></li>
+        <li><a class="parrafo" href="{% url 'escuderias' %}" style="color: white; text-decoration: none;">Equipos</a></li>
+        <li style="position: relative;">
+            <a class="parrafo" href="#c" style="color: white; text-decoration: none;">Circuitos</a>
+            <ul class="parrafo" style="position: absolute; top: 100%; left: 0; background-color: white; list-style: none; padding: 0; display: none;">
+                <li><a href="#c1" style="color: red; text-decoration: none;">Circuitos actuales</a></li>
+                <li><a href="#c2" style="color: red; text-decoration: none;">Circuitos destacados</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<hr style="height: 5px; background-color: red; border: none;">
+
+<script>
+    document.querySelector('li a[href="#c"]').addEventListener('click', function(event) {
+        event.preventDefault(); 
+        const submenu = document.querySelector('li a[href="#c"] + ul');
+        if (submenu.style.display === 'block') {
+            submenu.style.display = 'none';
+        } else {
+            submenu.style.display = 'block';
+        }
+    });
+</script>
+
+    <main>
+        <h2 id="c" class="titulo">Circuitos</h2>
+        <section>
+            <article>
+                <h4 class="subtitulo" id="c1">Circuitos actuales</h4>
+                <div class="parrafo">
+                    <p>A lo largo de la historia los circuitos han ido cambiando, ya que estos se manejan bajo contrato y bajo las especificaciones de la <abbr title="Federación Internacional del Automóvilismo">FIA</abbr> en la actualidad tenemos circuitos muy variados, algunos con rectas muy largas y otros con muchas curvas, estos son los circuitos de la temporada actual:</p>
+                </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="4">
+                            <ol>
+                                <li>Circuito internacional de Bahreín</li>
+                            </ol>
+                        </th>
+                        <th colspan="4">
+                            <ol start="2">
+                                <li>Jeddah Corniche Circuit</li>
+                            </ol>
+                        </th>
+                        <th colspan="4">
+                            <ol start="3">
+                                <li>Circuito de Albert Park</li>
+                            </ol>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="3"><img src="https://images.daznservices.com/di/library/DAZN_News/d3/c0/sakhir-circuit-bahrain-gp-f1_111w5ugdzb3sj14yzns6g56u7a.png?t=551456263" alt="circuito de bahreín" width="300"></td>
+                        <td>
+                            Ubicación <br><b>Baréin</b><br>
+                            N° de vueltas <br><b>57</b><br>
+                            Distancia <br><b>308.2 KM</b>
+                        </td>
+                        <td colspan="3"><img src="https://images.daznservices.com/di/library/DAZN_News/84/ab/jeddah-circuit-saudi-arabian-gp-f1_r8q12te0hi4015t7kt6xkhdt1.png?t=1917925933" alt="circuito de jeddah" width="300"></td>
+                        <td>
+                            Ubicación <br><b>Arabia Saudita</b><br>
+                            N° de vueltas <br><b>50</b><br>
+                            Distancia <br><b>308.5 KM</b>
+                        </td>
+                        <td colspan="3"><img src="https://tercerequipo.com/wp-content/uploads/2022/04/image.png" alt="circuito de albert park" width="300"></td>
+                        <td>
+                            Ubicación <br><b>Australia</b><br>
+                            N° de vueltas <br><b>58</b><br>
+                            Distancia <br><b>306.1 KM</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="4">
+                            <ol start="4">
+                                <li>Circuito internacional de Suzuka</li>
+                            </ol>
+                        </th>
+                        <th colspan="4">
+                            <ol start="5">
+                                <li>Circuito internacional de Shangai</li>
+                            </ol>
+                        </th>
+                        <th colspan="4">
+                            <ol start="6">
+                                <li>Circuito internacional de Miami</li>
+                            </ol>
+                        </th>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="3"><img src="https://lebalap.academy/wp-content/uploads/2021/02/image-7.png" alt="Circuito internacional de Suzuka" width="300"></td>
+                        <td>
+                            Ubicación <br><b>Japón</b><br>
+                            N° de vueltas <br><b>53</b><br>
+                            Distancia <br><b>307.5 KM</b>
+                        </td>
+                        <td colspan="3"><img src="https://lebalap.academy/wp-content/uploads/2021/02/image.png" alt="Circuito internacional de Shangai" width="300"></td>
+                        <td>
+                            Ubicación <br><b>China</b><br>
+                            N° de vueltas <br><b>56</b><br>
+                            Distancia <br><b>305.1 KM</b>
+                        </td>
+                        <td colspan="3"><img src="https://immagini.alvolante.it/sites/default/files/styles/f1_larghezza_full/public/f1_anteprima/2024/miami.png" alt="Circuito internacional de Miami" width="300"></td>
+                        <td>
+                            Ubicación <br><b>Estados Unidos</b><br>
+                            N° de vueltas <br><b>57</b><br>
+                            Distancia <br><b>308.3 KM</b>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4">
+                            <ol start="7">
+                                <li>Circuito de Imola</li>
+                            </ol>
+                        </th>
+                        <th colspan="4">
+                            <ol start="8">
+                                <li>Circuito de Mónaco</li>
+                            </ol>
+                        </th>
+                        <th colspan="4">
+                            <ol start="9">
+                                <li>Circuito Gilles Villenueve</li>
+                            </ol>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Emilia_Romagna_Circuit" alt="Autodromo Internazionale Enzo e Dino Ferrari" width="300"></td>
+                        <td>
+                            Ubicación <br><b>Italia</b><br>
+                            N° de vueltas <br><b>63</b><br>
+                            Distancia <br><b>309.0 KM</b>
+                        </td>
+                        <td colspan="3"><img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Monoco_Circuit" alt="Circuit de Monaco" width="300"></td>
+                        <td>
+                            Ubicación <br><b>Mónaco</b><br>
+                            N° de vueltas <br><b>78</b><br>
+                            Distancia <br><b>260.3 KM</b>
+                        </td>
+                        <td colspan="3"><img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Canada_Circuit" alt="Circuit Gilles-Villeneuve" width="300"></td>
+                        <td>
+                            Ubicación <br><b>Canadá</b><br>
+                            N° de vueltas <br><b>70</b><br>
+                            Distancia <br><b>305.3 KM</b>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4">
+                            <ol start="10">
+                                <li>Circuito de Barcelona-Cataluña</li>
+                            </ol>
+                        </th>
+                        <th colspan="4">
+                            <ol start="11">
+                                <li>Red Bull Ring</li>
+                            </ol>
+                        </th>
+                        <th colspan="4">
+                            <ol start="12">
+                                <li>Circuito de Silverstone</li>
+                            </ol>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Spain_Circuit" alt="Circuit de Barcelona-Catalunya" width="300"></td>
+                        <td>
+                            Ubicación <br><b>España</b><br>
+                            N° de vueltas <br><b>66</b><br>
+                            Distancia <br><b>307.2 KM</b>
+                        </td>
+                        <td colspan="3"><img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Austria_Circuit" alt="Red Bull Ring" width="300"></td>
+                        <td>
+                            Ubicación <br><b>Austria</b><br>
+                            N° de vueltas <br><b>71</b><br>
+                            Distancia <br><b>306.5 KM</b>
+                        </td>
+                        <td colspan="3"><img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Great_Britain_Circuit" alt="Circuito de Silverstone" width="300"></td>
+                        <td>
+                            Ubicación <br><b>Reino Unido</b><br>
+                            N° de vueltas <br><b>52</b><br>
+                            Distancia <br><b>306.2 KM</b>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4">
+                            <ol start="13">
+                                <li>Circuito de Hungaroring</li>
+                            </ol>
+                        </th>
+                        <th colspan="4">
+                            <ol start="14">
+                                <li>Circuito de Spa-Francorchamps</li>
+                            </ol>
+                        </th>
+                        <th colspan="4">
+                            <ol start="15">
+                                <li>Circuito de Zandvoort</li>
+                            </ol>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Hungary_Circuit" alt="Hungaroring" width="300"></td>
+                        <td>
+                            Ubicación <br><b>Hungría</b><br>
+                            N° de vueltas <br><b>70</b><br>
+                            Distancia <br><b>306.6 KM</b>
+                        </td>
+                        <td colspan="3"><img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Belgium_Circuit" alt="Circuit de Spa-Francorchamps" width="300"></td>
+                        <td>
+                            Ubicación <br><b>Bélgica</b><br>
+                            N° de vueltas <br><b>44</b><br>
+                            Distancia <br><b>308.1 KM</b>
+                        </td>
+                        <td colspan="3"><img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Netherlands_Circuit" alt="Circuit Zandvoort" width="300"></td>
+                        <td>
+                            Ubicación <br><b>Países Bajos</b><br>
+                            N° de vueltas <br><b>72</b><br>
+                            Distancia <br><b>306.6 KM</b>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4">
+                            <ol start="16">
+                                <li>Autódromo Nacional de Monza</li>
+                            </ol>
+                        </th>
+                        <th colspan="4">
+                            <ol start="17">
+                                <li>Circuito urbano de Bakú</li>
+                            </ol>
+                        </th>
+                        <th colspan="4">
+                            <ol start="18">
+                                <li>Circuito urbano de Marina Bay</li>
+                            </ol>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Italy_Circuit" alt="Autodromo Nazionale Monza" width="300"></td>
+                        <td>
+                            Ubicación <br><b>Italia</b><br>
+                            N° de vueltas <br><b>53</b><br>
+                            Distancia <br><b>306.7 KM</b>
+                        </td>
+                        <td colspan="3"><img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Baku_Circuit" alt="Baku City Circuit" width="300"></td>
+                        <td>
+                            Ubicación <br><b>Azerbayán</b><br>
+                            N° de vueltas <br><b>51</b><br>
+                            Distancia <br><b>306.0 KM</b>
+                        </td>
+                        <td colspan="3"><img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Singapore_Circuit" alt="Marina Bay Street Circuit" width="300"></td>
+                        <td>
+                            Ubicación <br><b>Singapur</b><br>
+                            N° de vueltas <br><b>62</b><br>
+                            Distancia <br><b>306.1 KM</b>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4">
+                            <ol start="19">
+                                <li>Circuito de las Américas</li>
+                            </ol>
+                        </th>
+                        <th colspan="4">
+                            <ol start="20">
+                                <li>Autódromo Hermanos Rodríguez</li>
+                            </ol>
+                        </th>
+                        <th colspan="4">
+                            <ol start="21">
+                                <li>Autodromo José Carlos Pace</li>
+                            </ol>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/USA_Circuit" alt="Circuit of The Americas" width="300"></td>
+                        <td>
+                            Ubicación <br><b>Estados Unidos</b><br>
+                            N° de vueltas <br><b>56</b><br>
+                            Distancia <br><b>308.4 KM</b>
+                        </td>
+                        <td colspan="3"><img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Mexico_Circuit" alt="Autódromo Hermanos Rodríguez" width="300"></td>
+                        <td>
+                            Ubicación <br><b>México</b><br>
+                            N° de vueltas <br><b>71</b><br>
+                            Distancia <br><b>305.4 KM</b>
+                        </td>
+                        <td colspan="3"><img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Brazil_Circuit" alt="Autódromo José Carlos Pace" width="300"></td>
+                        <td>
+                            Ubicación <br><b>Brazil</b><br>
+                            N° de vueltas <br><b>71</b><br>
+                            Distancia <br><b>305.9 KM</b>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4">
+                            <ol start="22">
+                                <li>Circuito urbano de Las Vegas</li>
+                            </ol>
+                        </th>
+                        <th colspan="4">
+                            <ol start="23">
+                                <li>Circuito internacional de Losail</li>
+                            </ol>
+                        </th>
+                        <th colspan="4">
+                            <ol start="24">
+                                <li>Circuito de Yas Marina</li>
+                            </ol>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Las_Vegas_Circuit" alt="Las Vegas Strip Circuit" width="300"></td>
+                        <td>
+                            Ubicación <br><b>Estados Unidos</b><br>
+                            N° de vueltas <br><b>50</b><br>
+                            Distancia <br><b>310.0 KM</b>
+                        </td>
+                        <td colspan="3"><img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Qatar_Circuit" alt="Lusail International Circuit" width="300"></td>
+                        <td>
+                            Ubicación <br><b>Catar</b><br>
+                            N° de vueltas <br><b>57</b><br>
+                            Distancia <br><b>308.6 KM</b>
+                        </td>
+                        <td colspan="3"><img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Abu_Dhabi_Circuit" alt="Yas Marina Circuit" width="300"></td>
+                        <td>
+                            Ubicación <br><b>Emiratos Árabes Unidos</b><br>
+                            N° de vueltas <br><b>58</b><br>
+                            Distancia <br><b>306.2 KM</b>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </article>
+            <br>
+
+            <h4 class="subtitulo" id="c2">Circuitos destacados</h4>
+            <div class="parrafo">
+                <article>
+                        <p>Dentro de los circuitos destacados existen varios pero aquí se destacarán principalmente 3 por su longevidad, su historia y los pilotos que han conducido en él</p>
+                        <br>
+                        <p style="font-size: 20px;"><strong>Circuito de Monza</strong></p>
+                        <p>Es uno de los circuitos más antiguos y rápidos de la Fórmula 1. Situado en un parque en Monza, Italia, es conocido por su larga recta principal y la emblemática Parabólica. La velocidad punta es crucial en este circuito.</p>
+                        <center><img src="https://img.redbull.com/images/c_crop,x_0,y_0,h_2560,w_3840/c_fill,w_1200,h_800/q_auto,f_auto/redbullcom/2024/4/19/lg8v8p9cmubkjfi1gs0a/monza-mejores-circuitos" alt="Circuito de Monza" height="600"></center>
+                        <center><audio controls>
+                            <source src="{% static 'sitioweb/audio/1996SchumacherWinsMonza.mp3' %}" type="audio/mpeg">
+                            Tu navegador no soporta la reproducción de audio.
+                        </audio>
+                        <p><i>Audio de carrera de Monza 1996 donde Michael Schumacher ganó</i></p>
+                        </center>
+                </article>
+            </div>
+            <br>
+
+            <div class="parrafo">
+                <article>
+                        <p style="font-size: 20px;"><strong>Circuito de Spa-Francorchamps</strong></p>
+                        <p>Ubicado en las Ardenas belgas, Spa-Francorchamps es conocido por su combinación de curvas rápidas y cambios de elevación. La curva Eau Rouge y la recta Kemmel son partes icónicas del circuito.</p>
+                        <center><img src="https://img.redbull.com/images/c_fill,g_auto,w_1200,h_800/q_auto,f_auto/redbullcom/2013/04/11/1331585981159_1/spa-francorchamps-en-el-bosque-de-ardenas" alt="Circuito de Bélgica" height="600"></center>
+                </article>
+            </div>
+            <br>
+
+            <div class="parrafo">
+                <article>
+                        <p style="font-size: 20px;"><strong>Circuito de Mónaco</strong></p>
+                    <p>Conocido por ser estrecho, sinuoso y situado en las calles de Monte Carlo, Mónaco, este circuito urbano es famoso por sus curvas cerradas y la falta de espacio para adelantamientos. Es considerado uno de los más desafiantes y glamorosos del calendario.</p>
+                    <center><img src="https://hotbook.mx/wp-content/uploads/2022/05/foto-2-todo-lo-que-debes-saber-sobre-el-gran-premio-de-monaco-de-f1.jpeg" alt="Circuito de Mónaco" width="900"></center>
+                </article>
+            </div>
+        </section>
+    </main>
+    <br>
+    <hr>
+    <footer class="abajo">
+        <a href="#inicio">👉Click aquí para regresar al inicio de la página</a>
+        <address>
+            <p>Desarrollado por MSTS</p>
+            <p>Derechos reservados &copy;</p>
+        </address>
+    </footer>
+</body>

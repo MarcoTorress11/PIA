@@ -1,0 +1,203 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 2</title>
+    <link rel="stylesheet" href="{% static 'sitioweb/css/letra.css' %}">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+<body>
+<header style="display: flex; align-items: center; justify-content: space-between; padding: 10px; background-color: rgba(255, 0, 0, 0.683);">
+    <h1 class="titulo_principal" style="color: whitesmoke; margin: 0;" id="inicio">Fórmula 1</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/F1.svg/640px-F1.svg.png" alt="logotipo formula1" style="height: 80px; width: auto;">
+</header>
+
+<nav style="background-color: red;">
+    <ul style="list-style: none; padding: 0; display: flex; justify-content: space-around; color: white; align-items: center;">
+        <li><a class="parrafo" href="{% url 'index' %}" style="color: white; text-decoration: none;">Historia de la Fórmula 1</a></li>
+        <li style="position: relative;">
+            <a class="parrafo" href="#func" style="color: white; text-decoration: none;">Como funciona la Fórmula 1 actual</a>
+            <ul class="parrafo" style="position: absolute; top: 100%; left: 0; background-color: white; list-style: none; padding: 0; display: none;">
+                <li><a href="#func1" style="color: red; text-decoration: none;">Temporada</a></li>
+                <li><a href="#func2" style="color: red; text-decoration: none;">Equipos y Pilotos</a></li>
+                <li><a href="#func3" style="color: red; text-decoration: none;">Formato de carreras</a></li>
+                <li><a href="#func4" style="color: red; text-decoration: none;">Regulaciones</a></li>
+                <li><a href="#func5" style="color: red; text-decoration: none;">Otros aspectos a tomar en cuenta</a></li>
+            </ul>
+        </li>
+        <li><a class="parrafo" href="{% url 'pilotos' %}" style="color: white; text-decoration: none;">Pilotos</a></li>
+        <li><a class="parrafo" href="{% url 'escuderias' %}" style="color: white; text-decoration: none;">Equipos</a></li>
+        <li><a class="parrafo" href="{% url 'circuitos' %}" style="color: white; text-decoration: none;">Circuitos</a></li>
+    </ul>
+</nav>
+
+<hr style="height: 5px; background-color: red; border: none;">
+
+<script>
+    document.querySelector('li a[href="#func"]').addEventListener('click', function(event) {
+        event.preventDefault(); 
+        const submenu = document.querySelector('li a[href="#func"] + ul');
+        if (submenu.style.display === 'block') {
+            submenu.style.display = 'none';
+        } else {
+            submenu.style.display = 'block';
+        }
+    });
+</script>
+
+
+    <main>
+        <h2 id="func" class="titulo">Como funciona la Fórmula 1 actual</h2>
+        <section>
+            <article>
+                <h4 class="subtitulo" id="func1">Temporada</h4>
+                <div class="parrafo">
+                    <p>La Fórmula 1 se lleva a cabo anualmente, normalmente desde marzo hasta diciembre. Durante la temporada, se disputan alrededor de 20 a 23 carreras, conocidas como Grands Prix, en diferentes circuitos alrededor del mundo.</p>
+                <p>Durante la temporada los pilotos y equipos ganan puntos en cada carrera según su posición final. Al final de la temporada, el piloto con más puntos se corona Campeón Mundial de Pilotos, y el equipo con más puntos se convierte en el Campeón de Constructores. </p>
+                </div>
+                <center>
+                    <img src="https://cdn-5.motorsport.com/images/amp/6b7LzvL0/s6/world-champion-max-verstappen-.jpg" alt="Escuderia RedBull celebrando campeonato 2022" width="600">
+                    <figcaption>Escudería RedBull celebrando campeonato mundial (Max Verstappen) y de constructores del 2022</figcaption>
+                </center>
+            </article>
+        </section>
+        <br>
+        <section>
+            <article>
+                <h4 class="subtitulo" id="func2">Equipos y Pilotos</h4>
+                <div class="parrafo">
+                    <p>Actualmente, la Fórmula 1 cuenta con 10 equipos, cada uno con dos pilotos. Los equipos son responsables de diseñar y construir sus propios autos, aunque algunos componentes pueden ser adquiridos de otros fabricantes.</p>
+                </div>
+                <center>
+                    <img src="https://e00-mx-marca.uecdn.es/mx/assets/multimedia/imagenes/2023/12/30/17039552989460.jpg" alt="Parrilla actual de pilotos 2024" width="600">
+                    <figcaption>Parrilla actual de equipos y pilotos 2024</figcaption>
+                </center>
+                <div class="parrafo">
+                    <p>Cada equipo tiene dos pilotos titulares que compiten en cada carrera. Los pilotos tienen contratos con los equipos y se seleccionan en función de su habilidad, experiencia y, a veces, el respaldo financiero.</p>
+                </div>
+            </article>
+        </section>
+        <br>
+        <section>
+            <article>
+                <h4 class="subtitulo" id="func3">Formato de carreras</h4>
+                <div class="parrafo">
+                    <dl>
+                        <dt><b>Prácticas Libres (Viernes y Sábado)</b></dt>
+                        <dd>Los fines de semana comienzan con sesiones de prácticas libres (dos el viernes y una el sábado), donde los pilotos prueban sus autos, ajustan la configuración y se familiarizan con el circuito.</dd>
+                        <br>
+                        <dt><b>Clasificación (Sábado)</b></dt>
+                        <dd>La clasificación se divide en tres partes: <strong>Q1, Q2 y Q3.</strong> <br>
+                            <ul>
+                                <li>Q1: Todos los pilotos compiten por el mejor tiempo en una sesión de 18 minutos. Los 15 más rápidos avanzan a Q2.</li>
+                                <li>Q2: Los 15 pilotos restantes compiten durante 15 minutos, y los 10 más rápidos avanzan a Q3.</li>
+                                <li>Q3: Los 10 pilotos más rápidos compiten durante 12 minutos por las primeras posiciones en la parrilla de salida. El piloto con el mejor tiempo consigue la pole position (primera posición en la salida de la carrera).</li><br>
+                            </ul>
+                        <dt><b>Carrera (Domingo)</b></dt>
+                        <dd>La carrera principal se celebra el domingo. Los pilotos comienzan en las posiciones obtenidas en la clasificación y compiten durante una distancia determinada, que generalmente es de alrededor de 305 km o aproximadamente 1 hora y media, la carrera no puede exceder las 2 horas de duración.</dd>
+                        <br>
+                        <dt><b>Puntos</b></dt>
+                        <dd>Los 10 primeros puestos reciben puntos, distribuidos de la siguiente manera: <i>25 puntos para el 1.º lugar, 18 para el 2.º, 15 para el 3.º, y así sucesivamente hasta el 10.º lugar, que recibe 1 punto</i>. Además, se otorga un punto extra al piloto que marque la vuelta más rápida, siempre que termine entre los 10 primeros.</dd>
+                    </dl>
+                </div>
+                <br>
+                <br>
+                <div class="parrafo">
+                    <p><strong>Video explicatorio</strong></p>
+                <iframe width="950" height="534" src="https://www.youtube.com/embed/Q-jjZMMxbZs" title="Beginner&#39;s Guide to F1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </article>
+        </section>
+        <br>
+        <section>
+            <article>
+                <h4 class="subtitulo" id="func4">Regulaciones</h4>
+                <div class="parrafo">
+                    <p>La Fórmula 1 cuenta con diferentes regulaciones como:</p>
+                <ul>
+                    <li><b>Motores híbridos:</b> Desde 2014, los autos de F1 utilizan unidades de potencia híbridas, que combinan un motor de combustión interna (V6 turbo) con sistemas de recuperación de energía (ERS).</li><br>
+                    <li><b>Limite de motores:</b>Cada piloto tiene un número limitado de unidades de potencia (motores) para usar durante la temporada. Exceder este límite resulta en penalizaciones en la parrilla de salida.</li><br>
+                    <li><b>Neumáticos:</b> Pirelli es el proveedor exclusivo de neumáticos en F1. Cada fin de semana, se ofrecen tres compuestos de neumáticos secos: <strong>blandos, medios y duros</strong>, junto con dos tipos de neumáticos para condiciones húmedas: <strong>intermedios y de lluvia</strong>; por lo que cada fin de semana los equipos deben gestionar sus neumaticos con una estrategia adecuada tanto en las clasificaciones como en la carrera.</li>
+                </ul>
+                </div>
+                <center>
+                    <img src="https://f1chronicle.com/wp-content/uploads/2022/03/pirelli-f1-2022-tyrerange12-scaled.jpg" alt="Neumaticos Pirelli usados en las carreras" width="600">
+                    <figcaption>Neumaticos Pirelli usados en las carreras</figcaption>
+                </center>
+            </article>
+        </section>
+        <br>
+        <section>
+            <article>
+                <h4 class="parrafo" id="func5">Otros aspectos a tomar en cuenta</h4>
+                <ul>
+                    <div class="parrafo">
+                        <li><b>Estrategia de Carrera:</b> La estrategia en la F1 es crucial e incluye decisiones sobre el uso de neumáticos, paradas en boxes y la gestión del combustible y la energía.</li><br>
+                    </div>
+                    <center>
+                        <img src="https://cdn-7.motorsport.com/images/amp/2d1ZO3ZY/s1000/red-bull-racing-pitwall.jpg" alt="Pitwall de RedBull durante la carrera" width="700">
+                        <figcaption>Pitwall de RedBull durante la carrera</figcaption><br><br>
+                    </center>
+                    <div class="parrafo">
+                        <li><b>Límite Presupuestario:</b> Desde 2021, se implementó un límite presupuestario para nivelar la competencia y reducir los costos de desarrollo.</li>
+                    </div>
+                </ul>
+            </article>
+        </section>
+
+        <br>
+
+        <section>
+            <h4 class="parrafo">Tienes alguna otra duda?, Contáctanos</h4>
+            <center>
+                <form id="formContacto">
+                    {% csrf_token %}
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" maxlength="60" required><br>
+            
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" maxlength="60" required><br>
+            
+                    <label for="duda">Duda:</label>
+                    <input type="text" id="duda" name="duda" maxlength="300" required><br>
+            
+                    <label for="fecha">Fecha:</label>
+                    <input type="datetime-local" id="fecha" name="fecha" required><br>
+            
+                    <label for="informacion">¿Te gustaría recibir información?</label>
+                    <input type="checkbox" id="informacion" name="informacion"><br>
+            
+                    <input type="submit" value="Enviar">
+                </form>
+            </center>
+        </section>
+    </body>
+    </main>
+    
+<script type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+emailjs.init({
+    publicKey: "FLQ7IJgInhGy96MK5",
+});
+})();
+</script>
+
+<script src="{% static 'sitioweb/js/formulario.js' %}"></script>
+
+    <br>
+    <hr>
+    <footer class="abajo">
+        <a href="#inicio">👉Click aquí para regresar al inicio de la página</a>
+        <address>
+            <p>Desarrollado por MSTS</p>
+            <p>Derechos reservados &copy;</p>
+        </address>
+    </footer>
+</body>
+</html>
